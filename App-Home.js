@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { AppRegistry, Card, Dimensions, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { AppRegistry, Card, Dimensions, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 function getDate() {
 
@@ -43,7 +43,6 @@ function Home ({ navigation }) {
   const [color7c, setColor7c] = useState(default_color);
 
   function changeColor(index) {
-
     switch (index) {
       case '1a':
         if (color1a == default_color) { setColor1a('#D98FC6');     }
@@ -135,306 +134,210 @@ function Home ({ navigation }) {
   }
 
   return (
-    <ScrollView backgroundColor={'#444444'} alignItems={'center'}>
-      <View height={40}/>
-      <Text style={styles.date}>{getDate()}</Text>
-      <View height={40}/>
+    <ImageBackground source={require('./assets/bg.png')} style={{flex: 1, width:"100%", alignItems: 'center'}}>
+      <ScrollView alignItems={'center'}>
+        <View height={30}/>
+        <Text style={styles.date}>{getDate()}</Text>
+        <View height={30}/>
 
-      <View style={styles.checkboxes}>
+        <View style={styles.checkboxes}>
+          <View style={{flex:1, padding:7, alignItems:'center', justifyContent: 'space-between'}}>
+            <View style={styles.box_row}>
+              <TouchableOpacity onPress={()=>{changeColor('1c')}} >
+                <View style={box(color1c)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
 
-        <View style={styles.box_row}>
-          <TouchableOpacity onPress={()=>{changeColor('1a')}} >
-            <View style={{
-              backgroundColor: color1a,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
+              <TouchableOpacity onPress={()=>{changeColor('1b')}} >
+                <View style={box(color1b)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={()=>{changeColor('1a')}} >
+                <View style={box(color1a)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+            <View style={styles.box_row}>
+              <TouchableOpacity onPress={()=>{changeColor('2c')}} >
+                <View style={box(color2c)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>{changeColor('2a')}} >
-            <View style={{
-              backgroundColor: color2a,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
+              <TouchableOpacity onPress={()=>{changeColor('2b')}} >
+                <View style={box(color2b)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>{changeColor('3a')}} >
-            <View style={{
-              backgroundColor: color3a,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
+              <TouchableOpacity onPress={()=>{changeColor('2a')}} >
+                <View style={box(color2a)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+            <View style={styles.box_row}>
+              <TouchableOpacity onPress={()=>{changeColor('3c')}} >
+                <View style={box(color3c)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>{changeColor('4a')}} >
-            <View style={{
-              backgroundColor: color4a,
-              borderRadius:5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
+              <TouchableOpacity onPress={()=>{changeColor('3b')}} >
+                <View style={box(color3b)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>{changeColor('5a')}} >
-            <View style={{
-              backgroundColor: color5a,
-              borderRadius:5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
+              <TouchableOpacity onPress={()=>{changeColor('3a')}} >
+                <View style={box(color3a)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+            <View style={styles.box_row}>
+              <TouchableOpacity onPress={()=>{changeColor('4c')}} >
+                <View style={box(color4c)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>{changeColor('6a')}} >
-            <View style={{
-              backgroundColor: color6a,
-              borderRadius:5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
+              <TouchableOpacity onPress={()=>{changeColor('4b')}} >
+                <View style={box(color4b)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>{changeColor('7a')}} >
-            <View style={{
-              backgroundColor: color7a,
-              borderRadius:5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
+              <TouchableOpacity onPress={()=>{changeColor('4a')}} >
+                <View style={box(color4a)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+            <View style={styles.box_row}>
+              <TouchableOpacity onPress={()=>{changeColor('5c')}} >
+                <View style={box(color5c)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={()=>{changeColor('5b')}} >
+                <View style={box(color5b)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={()=>{changeColor('5a')}} >
+                <View style={box(color5a)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.box_row}>
+              <TouchableOpacity onPress={()=>{changeColor('6c')}} >
+                <View style={box(color6c)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={()=>{changeColor('6b')}} >
+                <View style={box(color6b)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={()=>{changeColor('6a')}} >
+                <View style={box(color6a)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.box_row}>
+              <TouchableOpacity onPress={()=>{changeColor('7c')}} >
+                <View style={box(color7c)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={()=>{changeColor('7b')}} >
+                <View style={box(color7b)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={()=>{changeColor('7a')}} >
+                <View style={box(color7a)}>
+                  <Text></Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
-
-        <View style={styles.box_row}>
-          <TouchableOpacity onPress={()=>{changeColor('1b')}} >
-            <View style={{
-              backgroundColor: color1b,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('2b')}} >
-            <View style={{
-              backgroundColor: color2b,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('3b')}} >
-            <View style={{
-              backgroundColor: color3b,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('4b')}} >
-            <View style={{
-              backgroundColor: color4b,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('5b')}} >
-            <View style={{
-              backgroundColor: color5b,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('6b')}} >
-            <View style={{
-              backgroundColor: color6b,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('7b')}} >
-            <View style={{
-              backgroundColor: color7b,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.box_row}>
-          <TouchableOpacity onPress={()=>{changeColor('1c')}} >
-            <View style={{
-              backgroundColor: color1c,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('2c')}} >
-            <View style={{
-              backgroundColor: color2c,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('3c')}} >
-            <View style={{
-              backgroundColor: color3c,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('4c')}} >
-            <View style={{
-              backgroundColor: color4c,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('5c')}} >
-            <View style={{
-              backgroundColor: color5c,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('6c')}} >
-            <View style={{
-              backgroundColor: color6c,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={()=>{changeColor('7c')}} >
-            <View style={{
-              backgroundColor: color7c,
-              borderRadius: 5,
-              height: little_height,
-              width: little_width,
-            }}>
-              <Text></Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </ImageBackground>
   );
 }
 
 Home.navigationOptions = navigation => ({
-  title: "Home",
+  title: "Check Daily",
   headerStyle: {
-    backgroundColor: '#333333',
+    backgroundColor: '#111111',
   },
   headerTintColor: '#fff',
 });
 
 const win = Dimensions.get('window');
 
-const cols = 7;
-const rows = 3;
-const border = 10;
+const cols = 3;
+const rows = 7;
+const border = 5;
 
-const big_width = win.width*0.9;
-const little_width = (big_width - ((cols+1) * border)) / cols;
+const big_width = win.width*0.5;
+const little_width = ((big_width-10) - ((cols-1) * 7 * 2)) / cols;
 
-const little_height = little_width * 1;
-const big_height = (little_height*rows)+(border*(rows+1));
+const little_height = little_width;
+const big_height = (little_height*rows)+(7*1.5*(rows-1));
 
 const styles = StyleSheet.create({
   date: {
-    color: '#ffffff',
+    color: '#eeeeee',
     fontSize: 50,
   },
   checkboxes: {
     flex: 1,
     height: big_height,
     width: big_width,
-    backgroundColor: '#222222',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 15,
+    backgroundColor: '#111111',
+    borderRadius: 21,
+    borderColor: '#cccccc',
+    borderWidth: 5
   },
   box_row: {
     bottom: 0,
     flexDirection: 'row',
     width: '100%',
-    paddingTop: (border/2),
-    paddingBottom: (border/2),
-    paddingLeft: border,
-    paddingRight: border,
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
     justifyContent: 'space-between',
     backgroundColor: 'rgba(0, 0, 0, 0)'
   },
-  box: {
-    backgroundColor: '#ffffff',
-    borderRadius:5,
+});
+
+function box(color) {
+  return  {
+    backgroundColor: color,
+    borderRadius: 10,
+    borderWidth: 5,
+    borderColor: 'rgba(0, 0, 0, 0.3)',
     height: little_height,
     width: little_width,
-  },
-});
+  }
+}
 
 export default Home;
